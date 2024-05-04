@@ -18,7 +18,10 @@ Pandoc is used to convert the markdown to HTML, merging it with two files of jav
 
 The YAML file contains pandoc options which essentially add the two javascript files to the output HTML file:
 
->include-in-header:
+```
+include-in-header:
   - head.html
+```
+
 
 
