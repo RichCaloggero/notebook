@@ -30,16 +30,20 @@ for (const entry of cellMap) compileAndRun(entry[0]);
 
 function compileAndRun (cell) {
 console.debug("compileAndRun: ", sourceCode(cell));
-const f = compileFunction(sourceCode(cell), "x");
+const f = compileFunction(sourceCode(cell), "cell");
 if (f instanceof Function) {
 let result;
+window.cellLog = "";
+display(cell, "");
 try {
 result = f();
+if (result === undefined) result = "";
+console.debug("after f(): ", window.cellLog, result);
 } catch (e) {
 result = e;
 } // try
 
-display(cell, result? result.toString() : "undefined");
+display(cell, window.cellLog + result.toString());
   
 } else {
 display(cell, f);
@@ -55,3 +59,8 @@ cell.querySelector("code").textContent
 function display (cell, text) {
 cell.querySelector(".output").textContent = text;
 } // display
+
+function log (message) {
+console.debug("log: ", cellLog, message);
+cellLog = `${cellLog}\n${message}\n`;
+} // log

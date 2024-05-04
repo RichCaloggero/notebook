@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>notebook</title>
+  <meta name="author" content="rjc" />
+  <title>A Simple Accessible Notebook System</title>
   <style>
     html {
       color: #1a1a1a;
@@ -167,7 +168,36 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="notebook">Notebook</h1>
+<header id="title-block-header">
+<h1 class="title">A Simple Accessible Notebook System</h1>
+<p class="author">rjc</p>
+</header>
+<p>Security is nonexistant, so <strong>do not execute notebooks from
+untrusted sources!</strong></p>
+<ul>
+<li>tab among cells
+<ul>
+<li>first tabstop in each cell is editable code; use standard platform
+editing keys</li>
+<li>next tabstop is output for that cell</li>
+<li>if contents have changed when you tab out of the input area,
+contents are recomputed and any output written to the output area</li>
+<li>screen reader will read output since it gains keyboard focus</li>
+</ul></li>
+</ul>
+<pre><code>// I am a cell with containing code beginning with a comment
+&quot;hello&quot;</code></pre>
+<p>The above cell contained code, but nothing was returned, so no output
+was generated.</p>
+<p>To return a result, use the return keyword since cell computation is
+done via compiled function</p>
+<pre><code>return &quot;hello world!&quot;</code></pre>
+<p>use the log function to write to the output area. It takes a single
+string (use template strings to write multiple values)</p>
+<pre><code>a = 13;
+b = 26;
+log(`${a}, ${b}`);
+return b/a;</code></pre>
 <p>The js exponentiation operator is written as follows:</p>
 <pre><code>b = 10;
 e = 5;
@@ -178,9 +208,8 @@ return b ** e;</code></pre>
 7^2,
 2^3
 ];  </code></pre>
-<p>The notebook should be able to remember previous values:</p>
+<p>The notebook remembers previous values (they are all global
+variables):</p>
 <pre><code>return [b, e];</code></pre>
-<p>Security is nonexistant, so <strong>do not execute notebooks from
-untrusted sources!</strong></p>
 </body>
 </html>
