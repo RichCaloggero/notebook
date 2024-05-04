@@ -1,4 +1,4 @@
-# A Simple Accessible Notebok System
+# A Simple Accessible Literate Programming System
 
 Notebook systems such as Jupyter and Observable are examples of literate programming, whereby code, documentation, and modifiable examples can all be written in one document. When run, the user can read the documentation, see examples of what is being documented, and modify and run any of the code on demand.
 
