@@ -29,8 +29,8 @@ for (const entry of cellMap) compileAndRun(entry[0]);
 });
 
 function compileAndRun (cell) {
-console.debug("compileAndRun: ", sourceCode(cell));
-const f = compileFunction(sourceCode(cell), "cell");
+//console.debug("compileAndRun: ", sourceCode(cell));
+const f = compileFunction(sourceCode(cell), "cell", math);
 if (f instanceof Function) {
 let result;
 window.cellLog = "";
@@ -38,7 +38,7 @@ display(cell, "");
 try {
 result = f();
 if (result === undefined) result = "";
-console.debug("after f(): ", window.cellLog, result);
+//console.debug("after f(): ", window.cellLog, result);
 } catch (e) {
 result = e;
 } // try
@@ -61,6 +61,11 @@ cell.querySelector(".output").textContent = text;
 } // display
 
 function log (message) {
-console.debug("log: ", cellLog, message);
+//console.debug("log: ", cellLog, message);
 cellLog = `${cellLog}\n${message}\n`;
 } // log
+
+function diff(expression, variable) {
+const expr = math.parse(expression);
+return math.derivative(expr, variable);
+} // diff

@@ -61,5 +61,15 @@ return [b, e];
 ```
 
 
+## Math.js
+
+We make use of the extensive [math.js](https://mathjs.org/docs/) math library. This means that symbolic algebra is as easy as:
+
+```
+return diff("2x^2+3x+4", "x");  // returns the derivative, with respect to x, of the polynomial
+```
+
+See the documentation linked above to see all that this amazing library can do!
+
 
 

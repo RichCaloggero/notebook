@@ -162,6 +162,9 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <script src="compileFunction.js"></script>
+  <script src="math.js"></script>
+  <!--<script src="math-diff.js"></script>-->
+
   <script src="notebook.js"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -211,5 +214,12 @@ return b ** e;</code></pre>
 <p>The notebook remembers previous values (they are all global
 variables):</p>
 <pre><code>return [b, e];</code></pre>
+<h2 id="math.js">Math.js</h2>
+<p>We make use of the extensive <a
+href="https://mathjs.org/docs/">math.js</a> math library. This means
+that symbolic algebra is as easy as:</p>
+<pre><code>return diff(&quot;2x^2+3x+4&quot;, &quot;x&quot;);  // returns the derivative, with respect to x, of the polynomial</code></pre>
+<p>See the documentation linked above to see all that this amazing
+library can do!</p>
 </body>
 </html>
