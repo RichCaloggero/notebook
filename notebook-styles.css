@@ -1,2 +1,8 @@
-.cell {border: thin solid;}
-.cell code {border-bottom: thin dotted;}
+.cell {
+border: thin solid;
+padding: 2em;
+}
+.cell code {
+border-bottom: thin dotted;
+padding: 2em;
+}
