@@ -1,2 +1,2 @@
 include-in-header:
-  - head.html
+  - notebook-head.html

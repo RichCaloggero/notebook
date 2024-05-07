@@ -1,13 +1,13 @@
 window.addEventListener("load", () => {
 const cellMap = new Map();
 
-document.querySelectorAll("code").forEach(x => {
+document.querySelectorAll("pre code").forEach(x => {
+x.parentElement.setAttribute("class", "cell");
 x.setAttribute("contenteditable", "true");
 x.setAttribute("tabindex", "0");
 x.insertAdjacentHTML("afterEnd",
 `<div tabindex="0" class="output" aria-live="off" aria-atomic="true"></div>
 `);
-x.parentElement.setAttribute("class", "cell");
 });
 
 for (const cell of [...document.querySelectorAll(".cell")]) {
